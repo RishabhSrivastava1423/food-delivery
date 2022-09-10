@@ -3,12 +3,30 @@ import { Link } from "react-router-dom";
 import Logo from "../img/logo.png";
 import { motion } from "framer-motion";
 import avatar from "../img/avatar.png";
-import { MdShoppingBasket } from "react-icons/md";
+import { MdShoppingBasket, MdAdd, MdLogout } from "react-icons/md";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { app } from "../firebase.config";
+import { UseStateValue } from "../context/StateProvider.js";
+import { actionType } from "../context/reducer.js";
 
 const header = () => {
-  const login = () =>{
-    
-  }
+  const firebaseAuth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  const [{ user }, dispatch] = UseStateValue();
+
+  const login = async () => {
+    if (!user) {
+      const {
+        user: { refreshToken, providerData },
+      } = await signInWithPopup(firebaseAuth, provider);
+      dispatch({
+        type: actionType.SET_USER,
+        user: providerData[0],
+      });
+      localStorage.setItem("user", JSON.stringify(providerData[0]));
+    }
+  };
   return (
     <header className="fixed z-50 w-screen p-6 px-6">
       {/* Desktop And Tablet */}
@@ -54,6 +72,16 @@ const header = () => {
               alt="profile photo"
               onClick={login}
             />
+            <div className="bg-slate-200  w-40 shadow-xl rounded-lg flex flex-col absolute top-7 right-6">
+              {
+                user && user.email === process.env.REACT_APP_EMAIL && (
+              <Link to={"/createItem"}>
+              <p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-500 transition-all duration-100 ease-in-out text-teal-300 text-base"> <MdAdd/> New Item  </p>
+              </Link>
+                )
+            }
+              <p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-500 transition-all duration-100 ease-in-out text-teal-300 text-base"> <MdLogout/> LogOut </p>
+            </div>
           </div>
         </div>
       </div>
