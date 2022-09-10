@@ -40,7 +40,7 @@ const Header = () => {
     }
   };
   return (
-    <header className="fixed z-50 w-screen p-3 px-6 md:p-6 md:px-16">
+    <header className="fixed bg-white z-50 w-screen p-3 px-6 md:p-4 md:px-16">
       {/* Desktop And Tablet */}
       <div className="hidden md:flex w-full h-full items-center justify-between">
         <Link to={"/"} className="flex items-center gap-2">
@@ -128,6 +128,15 @@ const Header = () => {
           />
           <p className="text-headingColor text-xl font-bold">Food Delivery</p>
         </Link>
+        <motion.div
+            whileTap={{ scale: 0.6 }}
+            className="relative flex  items-center justify-center"
+          >
+            <MdShoppingBasket className="text-textColor text-2xl cursor-pointer" />
+            <div className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-red-500 flex items-center justify-center">
+              <p className="text-xs text-white font-semibold">5</p>
+            </div>
+          </motion.div>
         <div className="relative">
           <motion.img
             whileTap={{ scale: 0.6 }}
