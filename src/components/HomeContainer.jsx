@@ -1,6 +1,9 @@
 import React from 'react'
 import delivery from "../img/delivery.png";
 import heroBg from "../img/heroBg.png";
+import I1 from "../img/i1.png";
+// import I2 from "../img/delivery.png";
+// import I3 from "../img/delivery.png";
 
 const HomeContainer = () => {
   return (
@@ -18,11 +21,16 @@ const HomeContainer = () => {
         <button type="button" className="bg-gradient-to-br from-orange-400 to-orange-600 px-4 py-2 rounded-lg hover:shadow-lg transition-all ease-in-out duration-100 w-full md:w-auto">Order Now</button>
       </div>
 
-      <div className="py-2 flex-1 flex items-center " >
+      <div className="py-2 flex-1 flex items-center relative " >
         <div className='w-full flex items-center justify-center relative'>
-            <img src={heroBg} alt="bg-image" className='ml-auto lg:w-auto' style={{'height':'650px'}}/>
-            <div className='w-full h-full absolute flex items-center bg-blue-300 justify-center'></div>
-            
+            <img src={heroBg} alt="background" className='ml-auto lg:w-auto lg:h-650' style={{'height':'600px'}}/>
+            <div className='w-full h-full absolute top-0 left-0 flex items-center justify-center px-32 py-4'>
+              <div className="w-190 p-4 bg-cardOverlay backdrop-blur-md rounded-md flex flex-col items-center justify-center">
+                <img src={I1} alt="Icecream" className='w-40 -mt-20'  />
+                <p className='text-base font-semibold text-textColor'>Icecream</p>
+                <p className='text-sm font-semibold text-gray-400'>Chocloate & Vanilla</p>
+              </div>
+            </div>
         </div>
       </div>
     </section>
