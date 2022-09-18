@@ -22,14 +22,14 @@ const HomeContainer = () => {
 
       <div className="py-2 flex-1 flex items-center relative " >
         <div className='w-full flex items-center justify-center relative'>
-            <img src={heroBg} alt="background" className='ml-auto lg:w-auto lg:h-650' style={{'height':'600px'}}/>
-            <div className='w-full h-full absolute top-0 left-0 flex items-center justify-center px-16 py-16 gap-16 flex-wrap'>
+            <img src={heroBg} alt="background" className='ml-auto h-420 w-full lg:w-auto lg:h-650'/>
+            <div className='w-full h-full absolute top-0 left-0 flex items-center justify-center lg:px-[24px] py-4 gap-4 flex-wrap'>
               {
-                data && data.map(item => (<div key={item.id} className="w-190 min-w-[190px] p-4 bg-cardOverlay backdrop-blur-md rounded-3xl flex flex-col items-center justify-center drop-shadow-lg">
-                <img src={item.imageSrc} alt="Icecream" className='w-40 -mt-20'  />
-                <p className='text-xl font-semibold text-textColor mt-4'>{item.name}</p>
-                <p className='text-sm font-semibold text-lighttextGray'>{item.desc}</p>
-                <p className='text-sm font-semibold text-headingColor' > <span className='text-xs text-red-600'>Rs</span> {item.price} </p>
+                data && data.map(item => (<div key={item.id} className="lg:w-190 p-4 bg-cardOverlay backdrop-blur-md rounded-3xl flex flex-col items-center justify-center drop-shadow-lg">
+                <img src={item.imageSrc} alt="Icecream" className='w-20  lg:w-40 -mt-10 lg:-mt-20'  />
+                <p className='text-base lg:text-xl font-semibold text-textColor mt-2 lg:mt-4'>{item.name}</p>
+                <p className='text-[10px] lg:text-sm font-semibold text-lighttextGray my-1 lg:my-3'>{item.desc}</p>
+                <p className='text-base lg:text-sm font-semibold text-headingColor' > <span className='text-xs text-red-600'>Rs</span> {item.price} </p>
               </div>))
               }
             </div>

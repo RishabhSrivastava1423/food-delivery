@@ -98,7 +98,7 @@ const Header = () => {
               >
                 {user && user.email === process.env.REACT_APP_EMAIL && (
                   <Link to={"/createItem"}>
-                    <p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-500 transition-all duration-100 ease-in-out text-teal-300 text-base">
+                    <p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-500 transition-all duration-100 ease-in-out text-teal-300 text-base" onClick={()=> setIsMenu(false)}>
                       {" "}
                       New Item <MdAdd />
                     </p>
@@ -149,23 +149,23 @@ const Header = () => {
             <div className="bg-slate-200  w-40 shadow-xl rounded-lg flex flex-col absolute top-7 right-6">
               {user && user.email === process.env.REACT_APP_EMAIL && (
                 <Link to={"/createItem"}>
-                  <p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-500 transition-all duration-100 ease-in-out text-teal-300 text-base">
+                  <p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-500 transition-all duration-100 ease-in-out text-teal-300 text-base" onClick={()=> setIsMenu(false)}>
                     {" "}
                     New Item <MdAdd />
                   </p>
                 </Link>
               )}
               <ul className="flex flex-col">
-                <li className="px-4 py-2 gap-3 cursor-pointer hover:bg-slate-500 transition-all duration-100 ease-in-out text-teal-300 text-base">
+                <li className="px-4 py-2 gap-3 cursor-pointer hover:bg-slate-500 transition-all duration-100 ease-in-out text-teal-300 text-base" onClick={()=> setIsMenu(false)}>
                   Home
                 </li>
-                <li className="px-4 py-2 gap-3 cursor-pointer hover:bg-slate-500 transition-all duration-100 ease-in-out text-teal-300 text-base">
+                <li className="px-4 py-2 gap-3 cursor-pointer hover:bg-slate-500 transition-all duration-100 ease-in-out text-teal-300 text-base" onClick={()=> setIsMenu(false)}>
                   Menu
                 </li>
-                <li className="px-4 py-2 gap-3 cursor-pointer hover:bg-slate-500 transition-all duration-100 ease-in-out text-teal-300 text-base">
+                <li className="px-4 py-2 gap-3 cursor-pointer hover:bg-slate-500 transition-all duration-100 ease-in-out text-teal-300 text-base" onClick={()=> setIsMenu(false)}>
                   About Us
                 </li>
-                <li className="px-4 py-2 gap-3 cursor-pointer hover:bg-slate-500 transition-all duration-100 ease-in-out text-teal-300 text-base">
+                <li className="px-4 py-2 gap-3 cursor-pointer hover:bg-slate-500 transition-all duration-100 ease-in-out text-teal-300 text-base" onClick={()=> setIsMenu(false)}>
                   Service
                 </li>
               </ul>
